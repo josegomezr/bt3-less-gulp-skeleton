@@ -1,1 +1,60 @@
 @import '../../node_modules/bootstrap/less/bootstrap.less';
+
+// colors
+@bg-body: #00235d;
+
+@bg-header-gradient-start: #003ea3;
+@bg-header-gradient-end: #00296b;
+@color-header-border: #208bff;
+
+@bg-main-nav: #051d41;
+@bg-main-nav-active: #003da2;
+@color-main-nav: white;
+
+@bg-sub-nav: #ebebeb;
+@color-sub-nav: #051d41;
+@color-sub-nav-separator: #a4bfc6;
+
+@bg-featured: #6a7d9d;
+
+@bg-icon-pre-footer: #00348a;
+
+@color-pre-footer-highlight: #43afdd;
+@color-pre-footer: white;
+
+@bg-pre-footer: #040e17;
+@bg-footer: #02090f;
+
+@bg-item-body-odd: #000f28;
+@bg-item-body-even: #003da2;
+
+@bg-icon-double-header: #208bff;
+
+
+
+
+.container, .container-fluid{
+  border: 1px dashed gray;
+}
+
+@media (min-width: @screen-lg-min) {
+  .container-fluid.until-lg{
+    width: @container-lg;
+  }
+}
+
+.container-fluid.until-md{
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+@import 'utils.less';
+@import 'widgets.less';
+
+@import 'header.less';
+@import 'navbar.less';

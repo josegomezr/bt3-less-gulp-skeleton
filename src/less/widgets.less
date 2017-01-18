@@ -1,0 +1,99 @@
+@size-icon-holder-double-header: 64px;
+@size-icon-double-header: 48px;
+
+.icon-double-header {
+  &.diagonal{
+    .icon-holder{
+      .size(@size-icon-holder-double-header+16px, @size-icon-holder-double-header);
+    }
+    .icon-holder:after{
+      content: " ";
+      display: block;
+      border-right: 8px solid @bg-main-nav;
+      border-top: @size-icon-holder-double-header solid @bg-icon-double-header;
+      float: right;
+    }
+
+    .icon-holder:before{
+      content: " ";
+      display: block;
+      border-left: 8px solid transparent;
+      border-bottom: @size-icon-holder-double-header solid @bg-icon-double-header;
+      float: left;
+    }
+    
+    .headers:before{
+      content: " ";
+      display: block;
+      border-right: 8px solid transparent;
+      border-top: @size-icon-holder-double-header solid @bg-main-nav;
+      float: right;
+      margin-right: -16px;
+    }
+  }
+
+  .icon-holder{
+    &{
+      float: left;
+      text-align: center;
+      .size(@size-icon-holder-double-header, @size-icon-holder-double-header);
+    }
+    .icon-fill{
+      background: @bg-icon-double-header;
+      float: left;
+      .size(@size-icon-double-header+16px, @size-icon-holder-double-header);
+      img{
+        .vertical-align(@size-icon-holder-double-header, @size-icon-double-header);
+        .square(@size-icon-double-header);
+      }
+    }
+
+    
+  }
+  .headers{
+    &{
+      padding-left: 6px;
+      padding-right: 8px;
+      background: @bg-main-nav;
+      height: @size-icon-holder-double-header;
+      float: left;
+    }
+    
+
+    .first-header{
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      height: @size-icon-holder-double-header / 2;
+      h1,h2,h3,h4,h5,h6{
+        margin: 0;
+        padding: 0;
+        padding-top: 8px;
+      }
+    }
+    .underline{
+      width: 110%;
+      content: " ";
+      display: block;
+      height: 2px;
+      background: @bg-icon-double-header;
+      margin-left: -12px;
+    }
+    .second-header{
+      color: @bg-main-nav-active;
+      height: @size-icon-holder-double-header / 2;
+      font-weight: bold;
+      h1,h2,h3,h4,h5,h6{
+        margin: 0;
+        padding: 0;
+        padding-top: 8px;
+      }
+    }
+  }
+
+  &:after{
+    clear:both;
+    content: " ";
+    display: block;
+  }
+}

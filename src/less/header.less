@@ -1,0 +1,129 @@
+@stripe-width: 24px;
+
+@header-height: 180px;
+@header-border-size: 5px;
+@header-box-height: @header-height - @header-border-size;
+
+@bg-stripe-1: #064aad;
+@bg-stripe-2: #0e5cc1;
+@bg-stripe-3: #1267d1;
+@bg-stripe-4: #0d59bb;
+
+#header{
+  #gradient .vertical(@bg-header-gradient-start, @bg-header-gradient-end);
+  height: @header-height;
+  border-bottom: @header-border-size solid @color-header-border;
+
+  #logo-wrapper #logo{
+    .vertical-align(@header-height, 120px);
+    .size(420px, 120px);
+  }
+  .stripes{
+    &{
+      content: " ";
+      display: block;
+      height: @header-box-height;
+    }
+    &.diagonal{
+      .stripe{
+        width: @stripe-width*2;  
+      }
+      .stripe:before{
+        content: " ";
+        border-left: @stripe-width solid transparent;
+        border-bottom: @header-box-height solid transparent;
+        float: left;
+      }
+      .stripe:after{
+        content: " ";
+        border-left: @stripe-width solid transparent;
+        border-bottom: @header-box-height solid transparent;
+        float: right;
+      }
+      .stripe-1:before{
+        border-left: @stripe-width solid transparent;
+        border-bottom: @header-box-height solid @bg-stripe-1;
+      }
+
+      .stripe-1:after{
+        border-left: @stripe-width solid @bg-stripe-1;
+        border-bottom: @header-box-height solid @bg-stripe-2;
+      }
+    
+      .stripe-2:before{
+        border-left: @stripe-width solid @bg-stripe-2;
+        border-bottom: @header-box-height solid @bg-stripe-3;
+      }
+      .stripe-2:after{
+        border-left: @stripe-width solid @bg-stripe-3;
+        border-bottom: @header-box-height solid @bg-stripe-4;
+      }
+
+      .stripe-3:before{
+        border-left: @stripe-width solid @bg-stripe-4;
+        border-bottom: @header-box-height solid transparent;
+      }
+
+      .stripe-3:after{
+        display: none;
+      }
+      .stripe-4{
+        display: none;
+      }
+    }
+
+    .stripe-1{
+      background: @bg-stripe-1;
+    }
+    .stripe-2{
+      background: @bg-stripe-2;
+    }
+    .stripe-3{
+      background: @bg-stripe-3;
+    }
+    .stripe-4{
+      background: @bg-stripe-4;
+    }
+    .stripe {
+      content: " ";
+      height: @header-box-height;
+      display: block;
+      width: @stripe-width;
+      float: left;
+    }
+      
+  }
+  &:after{
+    .clearfix();
+  }
+}
+
+.help-widget{
+  .icon-double-header{
+    float: left;
+  }
+  .help-image-wrapper{
+    float: right;
+    img{
+      width: 80px;
+      max-height: @header-box-height;
+    }
+  }
+}
+
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .help-widget .help-image-wrapper img{
+    width: 120px;
+  }
+}
+
+@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+  #header{
+    height: @header-height;
+    #logo-wrapper #logo{
+      .vertical-align(100px, 80px);
+      height: 80px;
+    }
+  }
+}

@@ -21,7 +21,7 @@ function compile_css(stream) {
 }
 
 gulp.task('css', function(){
-  var pipeline = gulp.src('src/less/**.less');
+  var pipeline = gulp.src('src/less/base.less');
   return compile_css(pipeline);
 });
 
